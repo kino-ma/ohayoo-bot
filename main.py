@@ -52,6 +52,7 @@ def handle_message(event):
         print("invalid token? (f)")
         return
     print(event)
+    print("hoge")
 
     line_bot_api.reply_message(
         event.reply_token,
