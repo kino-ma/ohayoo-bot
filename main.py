@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 from flask import Flask, request, abort
 import os
+import random
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -49,9 +50,19 @@ def handle_message(event):
     print("event:", event)
     print("text:", event.message.text)
 
+    text = gen_reply(event.message.text)
+
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text))
+        TextSendMessage(text=text))
+
+
+def gen_message(text):
+    idx = text.find("おはよ")
+    if idx == -1:
+        return text
+    
+    return "おはよ" + "！" * random.randint(1,15)
 
 if __name__ == "__main__":
 #    app.run()
