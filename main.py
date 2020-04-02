@@ -51,6 +51,7 @@ def handle_message(event):
     if event.replyToken == "00000000000000000000000000000000" or "ffffffffffffffffffffffffffffffff":
         print("invalid token? (f)")
         return
+    print(event)
 
     line_bot_api.reply_message(
         event.reply_token,
