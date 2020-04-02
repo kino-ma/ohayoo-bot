@@ -57,7 +57,7 @@ def handle_message(event):
         TextSendMessage(text=text))
 
 
-def gen_message(text):
+def gen_reply(text):
     idx = text.find("おはよ")
     if idx == -1:
         return text
