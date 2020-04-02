@@ -61,8 +61,9 @@ def gen_reply(text):
     idx = text.find("おはよ")
     if idx == -1:
         return text
-    
-    return "おはよ" + "！" * random.randint(1,30)
+    reply = "おはよ" + "！" * random.randint(0,30)
+    print("generated:", reply)
+    return reply
 
 if __name__ == "__main__":
 #    app.run()
