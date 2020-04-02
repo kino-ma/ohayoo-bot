@@ -15,10 +15,10 @@ from linebot.models import (
 app = Flask(__name__)
 
 #環境変数取得
-CHANNEL_ACCESS_TOKEN = "LdHbJ8lgjSAb/D82JovFpLCRRN+niO3FsUQanUJwzzw0wxd/xpe9p8o6xayKTZIpSCS5HhZ/AG96A5GKJaliodjUNqv7Y5KPUkCDv1D1D/n2wQJ3cnYbqCZrKxhKscqIPrN9REVqtMdbDzPRU2NuNQdB04t89/1O/w1cDnyilFU="
-CHANNEL_SECRET ="LdHbJ8lgjSAb/D82JovFpLCRRN+niO3FsUQanUJwzzw0wxd/xpe9p8o6xayKTZIpSCS5HhZ/AG96A5GKJaliodjUNqv7Y5KPUkCDv1D1D/n2wQJ3cnYbqCZrKxhKscqIPrN9REVqtMdbDzPRU2NuNQdB04t89/1O/w1cDnyilFU="
-line_bot_api = LineBotApi("LdHbJ8lgjSAb/D82JovFpLCRRN+niO3FsUQanUJwzzw0wxd/xpe9p8o6xayKTZIpSCS5HhZ/AG96A5GKJaliodjUNqv7Y5KPUkCDv1D1D/n2wQJ3cnYbqCZrKxhKscqIPrN9REVqtMdbDzPRU2NuNQdB04t89/1O/w1cDnyilFU=")
-handler = WebhookHandler("LdHbJ8lgjSAb/D82JovFpLCRRN+niO3FsUQanUJwzzw0wxd/xpe9p8o6xayKTZIpSCS5HhZ/AG96A5GKJaliodjUNqv7Y5KPUkCDv1D1D/n2wQJ3cnYbqCZrKxhKscqIPrN9REVqtMdbDzPRU2NuNQdB04t89/1O/w1cDnyilFU=")
+CHANNEL_ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+CHANNEL_SECRET = os.getenv("CHANNEL_SECRET")
+line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
+handler = WebhookHandler(CHANNEL_SECRET)
 
 @app.route("/", methods=['POST'])
 def ok():
