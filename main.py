@@ -62,7 +62,7 @@ def gen_reply(text):
     if idx == -1:
         return text
     
-    return "おはよ" + "！" * random.randint(1,15)
+    return "おはよ" + "！" * random.randint(1,30)
 
 if __name__ == "__main__":
 #    app.run()
