@@ -20,7 +20,7 @@ CHANNEL_SECRET ="LdHbJ8lgjSAb/D82JovFpLCRRN+niO3FsUQanUJwzzw0wxd/xpe9p8o6xayKTZI
 line_bot_api = LineBotApi("LdHbJ8lgjSAb/D82JovFpLCRRN+niO3FsUQanUJwzzw0wxd/xpe9p8o6xayKTZIpSCS5HhZ/AG96A5GKJaliodjUNqv7Y5KPUkCDv1D1D/n2wQJ3cnYbqCZrKxhKscqIPrN9REVqtMdbDzPRU2NuNQdB04t89/1O/w1cDnyilFU=")
 handler = WebhookHandler("LdHbJ8lgjSAb/D82JovFpLCRRN+niO3FsUQanUJwzzw0wxd/xpe9p8o6xayKTZIpSCS5HhZ/AG96A5GKJaliodjUNqv7Y5KPUkCDv1D1D/n2wQJ3cnYbqCZrKxhKscqIPrN9REVqtMdbDzPRU2NuNQdB04t89/1O/w1cDnyilFU=")
 
-@app.route("/")
+@app.route("/", methods=['POST'])
 def ok():
     return "OK"
 
